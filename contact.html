@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tours</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            color: #2e2f31;
+        }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        background: white;
+    }
+    
+    .txt1 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #1a1a1a;
+    }
+    
+    .links {
+        list-style-type: none;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .links li {
+        display: inline;
+    }
+    
+    .links a {
+        color: black;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 10px;
+        transition: color 0.3s ease;
+    }
+    
+    .links a:hover {
+        color: #1a61cd;
+    }
+    
+    .btn_book {
+        border-radius: 30px;
+        background-color: #2f3237;
+        color: #fff;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .btn_book:hover {
+        background-color: #32c8f1;
+        transform: scale(1.05);
+    }
+    .hero {
+    height: auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 20px;
+    margin: 30px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 15px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.media a img {
+    width: 60px;
+    height: 60px;
+}
+    </style>
+</head>
+<body>
+    <audio id="bg-music" autoplay loop>
+        <source src="Planetarium.mp3" type="audio/mp3">
+    </audio>
+    <nav class="navbar">
+        <h1 class="txt1">Travel Tours</h1>
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn_book" onclick="window.location.href='tour.html'">Book Now</button>
+    </nav>
+
+    <div class="hero">
+        <h2>Having trouble planning your trip?</h2>
+        <p>Contact us</p>
+        <form class="form" id="contactForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <textarea placeholder="Message" id="message" required></textarea>
+            <button type="submit" class="btn_book">Submit</button>
+        </form>
+        <div class="media">
+            <a href="https://www.instagram.com/"><img src="instagram.jpeg" alt="Instagram"></a>
+            <a href="https://www.facebook.com/"><img src="facebook.png" alt="Facebook"></a>
+            <a href="https://twitter.com/"><img src="x.png" alt="Twitter"></a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let phone = document.getElementById('phone').value.trim();
+            let message = document.getElementById('message').value.trim();
+            if (name === '') {
+                alert('Invalid name');
+                document.getElementById('name').focus();
+                return;
+            }
+            if (email === '' || !email.includes('@')) {
+                alert('Invalid email address');
+                document.getElementById('email').focus();
+                return;
+            }
+            let phoneNumber = Number(phone);
+            if (phone.length !== 10 || isNaN(phoneNumber)) {
+                alert('Invalid phone number');
+                document.getElementById('phone').focus();
+                return;
+            }
+            if (message === '') {
+                alert('Invalid message.');
+                document.getElementById('message').focus();
+                return;
+            }
+            alert('Form submitted successfully!');
+        });
+    </script>    
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tours</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            color: #2e2f31;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+        }
+        .txt1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        .links {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        .links li {
+            display: inline;
+        }
+        .links a {
+            color: black;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        .links a:hover {
+            color: #1a61cd;
+        }
+        .btn_book {
+            border-radius: 30px;
+            background-color: #2f3237;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .btn_book:hover {
+            background-color: #32c8f1;
+            transform: scale(1.05);
+        }
+        .hero {
+            background-image: url('dubai.webp');
+            background-size: cover;
+            background-position: center;
+            height: 650px;
+            display: flex;
+            align-items: center;
+            padding: 50px;
+            border-radius: 20px;
+            margin: 30px;
+            overflow: hidden;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .content{
+            max-width: 650px;
+            text-align: left;
+        }
+        .txt {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .txt2 {
+            font-size: 50px;
+            font-weight: bold;
+            color: rgb(5, 5, 5);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .b1 {
+            margin-top: 20px;
+        }
+        .container {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+            margin-top: 20px;
+            opacity: 0.7;
+        }
+        .container input, .container select, .container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .container button {
+            background-color: #1a61cd;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+        .container button:hover {
+            background-color: #1251a0;
+        }
+        #price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 25%;
+            height: 100vh;
+            background-color: #fff;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            z-index: 1000;
+        }
+        .sidebar.open {
+            right: 0;
+        }
+        .cin{
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        .cart-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .cart-item p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .carti {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #1a1a1a;
+        }
+        .carti:hover {
+            color: #ff4757;
+        }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" autoplay loop>
+        <source src="Planetarium.mp3" type="audio/mp3">
+    </audio>
+    <nav class="navbar">
+        <h1 class="txt1">Travel Tours</h1>
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn_book" onclick="window.location.href='tour.html'">Book Now</button>
+    </nav>
+    <div class="hero">
+        <div class="hero-content">
+            <p class="txt">Explore New York City</p>
+            <div class="container">
+                <label>Start Date:</label>
+                <input type="date" id="start-date">
+                <label>End Date:</label>
+                <input type="date" id="end-date">
+                <label>Number of People:</label>
+                <select id="people">
+                    <option value="1">1 Person</option>
+                    <option value="2">2 People</option>
+                    <option value="3">3 People</option>
+                    <option value="4">4 People</option>
+                    <option value="5">5 People</option>
+                </select>
+                <p>Cost per Day (per person): <b>$150</b></p>
+                <button onclick="cost()">Get Total Cost</button>
+                <h3 id="price"></h3>
+                <button class="btn_book" id="tiv" onclick="addtocart()">Add to my Package</button>
+                <a href="https://holidayz.makemytrip.com/holidays/india/package?id=60442&fromCity=New%20Delhi&cmp=SEM%7CD%7CHoliday%7CG%7CGeneric%7COBT_India_USA%7CBrand_USA%7CRSA%7CRegular%7C695199803500&pkgType=FIT&listingClassId=606&depDate=2025-05-11&variantId=FLIGHT_5C7C7B37" target="_blank">
+                <button class="btn_book">Book a Trip Now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar" id="cart">
+        <button class="carti" onclick="close()">&times;</button>
+        <div class="cart-header">Your Booking</div>
+        <div id="cartContent"></div>
+    </div>
+    <script>
+        function cost() {
+            let sd = new Date(document.getElementById('start-date').value);
+            let ed = new Date(document.getElementById('end-date').value);
+            let people = document.getElementById('people').value;
+            let net = 150;
+            if (sd && ed && ed > sd) {
+                let days = (ed - sd) / (1000 * 60 * 60 * 24);
+                let total = days * net * people;
+                document.getElementById('price').innerHTML = "Total Cost: $" + total;
+            } else {
+                document.getElementById('price').innerHTML = "Select Valid Dates";
+            }
+        }
+        function addtocart() {
+            const sdate = document.getElementById('start-date').value;
+            const edate = document.getElementById('end-date').value;
+            const people = document.getElementById('people').value;
+            const totalCost = document.getElementById('price').innerText;
+            if (!sdate || !edate || totalCost === "Select Valid Dates") {
+                alert("Please select valid dates and calculate the total cost before booking.");
+                return;
+            }
+            document.getElementById('cartContent').innerHTML = `
+                <div class="cart-item">
+                    <p><strong>Destination:</strong> New York City</p>
+                    <p><strong>Start Date:</strong> ${sdate}</p>
+                    <p><strong>End Date:</strong> ${edate}</p>
+                    <p><strong>Number of People:</strong> ${people}</p>
+                    <p><strong>Total Cost:</strong> ${totalCost}</p>
+                </div>
+            `;
+            document.getElementById('cart').classList.add('open');
+        }
+        function close() {
+            document.getElementById('cart').classList.remove('open');
+        }
+    </script>
+</body>
+</html>

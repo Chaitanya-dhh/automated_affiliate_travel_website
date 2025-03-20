@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tours</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            color: #2e2f31;
+        }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        background: white;
+    }
+    
+    .txt1 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #1a1a1a;
+    }
+    
+    .links {
+        list-style-type: none;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .links li {
+        display: inline;
+    }
+    
+    .links a {
+        color: black;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 10px;
+        transition: color 0.3s ease;
+    }
+    
+    .links a:hover {
+        color: #1a61cd;
+    }
+    
+    .btn_book {
+        border-radius: 30px;
+        background-color: #2f3237;
+        color: #fff;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .btn_book:hover {
+        background-color: #32c8f1;
+        transform: scale(1.05);
+    }
+    .hero {
+        height: auto;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+    }
+    table {
+        width: 90%;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+    table th,td{
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    .place {
+        padding: 15px;
+        border-radius: 15px;
+        background: #fff;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .place:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .place img {
+        width: 280px;
+        height: 180px;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+    
+    .place h3 {
+        margin-top: 10px;
+        font-size: 20px;
+        color: #333;
+    }
+    
+    .place p {
+        font-size: 16px;
+        color: #666;
+    }
+    .txt {
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    
+    .txt2 {
+        font-size: 50px;
+        font-weight: bold;
+        color: rgb(5, 5, 5);
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    
+    .b1 {
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" autoplay loop>
+        <source src="Planetarium.mp3" type="audio/mp3">
+    </audio>
+
+    <nav class="navbar">
+        <h1 class="txt1">Travel Tours</h1>
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn_book" onclick="window.location.href='tour.html'">Book Now</button>
+    </nav>
+
+    <div class="hero">
+        <table>
+            <tr>
+                <td>
+                    <div class="place">
+                        <a href="paris.html" target="_blank">
+                        <img src="paris.jpeg" alt="Paris">
+                    </a>
+                        <h3>Paris, City of Love</h3>
+                        <p>France</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="place">
+                        <a href="manali.html" target="_blank">
+                        <img src="manali.jpeg" alt="Manali">
+                        </a>
+                        <h3>Manali, Heaven on Earth</h3>
+                        <p>India</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="place">
+                        <a href="nyc.html" target="_blank">
+                        <img src="nyc.jpeg" alt="New York">
+                        </a>
+                        <h3>New York, The Big Apple</h3>
+                        <p>USA</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="place">
+                        <a href="tokyo.html" target="_blank">
+                        <img src="tokyo.jpeg" alt="Tokyo">
+                        </a>
+                        <h3>Tokyo, The Neon Wonderland</h3>
+                        <p>Japan</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="place">
+                        <a href="venice.html" target="_blank">
+                        <img src="venice.jpeg" alt="Venice">
+                        </a>
+                        <h3>Venice, The Floating City</h3>
+                        <p>Italy</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="place">
+                        <a href="dubai.html" target="_blank">
+                        <img src="dubai.jpeg" alt="Dubai" >
+                        </a>
+                        <h3>Dubai, The Desert Jewel</h3>
+                        <p>UAE</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>
